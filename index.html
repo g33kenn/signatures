@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixelvin - HTML Signature Generator</title>
+    <!-- Tailwind CSS for sleek interface layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons for dashboard -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+
+    <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <header class="text-center mb-10">
+            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">
+                Pixelvin HTML Signature Designer
+            </h1>
+            <p class="mt-3 max-w-2xl mx-auto text-lg text-slate-500 sm:mt-4">
+                Designed by <strong class="text-indigo-600 font-semibold">Pixelvin</strong>. Custom-built for bulletproof compatibility across Gmail, Outlook, and mobile.
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- LEFT PANEL: Controls (5 columns) -->
+            <div class="lg:col-span-5 bg-white shadow-md rounded-2xl border border-slate-100 p-6 space-y-6">
+                <div class="border-b border-slate-100 pb-4">
+                    <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                        <i data-lucide="sliders" class="w-5 h-5 text-indigo-500"></i>
+                        Signature Details
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-1">Changes here instantly update all templates on the right.</p>
+                </div>
+
+                <!-- Input Fields -->
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Full Name</label>
+                        <input type="text" id="inputName" value="First Last" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Job Title</label>
+                        <input type="text" id="inputTitle" value="Job Title" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Phone Number</label>
+                            <input type="text" id="inputPhone" value="+1 (416) 000-0000" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Location</label>
+                            <input type="text" id="inputLocation" value="Toronto, ON, Canada" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Email Address</label>
+                        <input type="email" id="inputEmail" value="mail@example.com" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Social Link (e.g., LinkedIn)</label>
+                        <input type="text" id="inputSocial" value="linkedin.com/in/example" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+                    </div>
+                </div>
+
+                <!-- Color Theme -->
+                <div class="border-t border-slate-100 pt-5">
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Accent Color Theme</label>
+                    <div class="flex flex-wrap gap-2.5" id="colorContainer">
+                        <!-- Filled dynamically -->
+                    </div>
+                </div>
+
+                <!-- Instructions Tip Box -->
+                <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-4 text-xs text-indigo-800 space-y-2">
+                    <p class="font-bold flex items-center gap-1.5">
+                        <i data-lucide="info" class="w-4 h-4"></i>
+                        How does copying work?
+                    </p>
+                    <p class="leading-relaxed">
+                        To install in Gmail, click <strong>"Copy to Clipboard"</strong> next to your favorite design. Our system copies it as a formatted element. Simply paste (<kbd class="font-mono bg-indigo-100 px-1 rounded">Ctrl+V</kbd> or <kbd class="font-mono bg-indigo-100 px-1 rounded">Cmd+V</kbd>) directly into Gmail's settings block!
+                    </p>
+                </div>
+            </div>
+
+            <!-- RIGHT PANEL: Templates (7 columns) -->
+            <div class="lg:col-span-7 space-y-8">
+                
+                <!-- TEMPLATE 1 -->
+                <div class="bg-white shadow-sm border border-slate-100 rounded-2xl p-6 relative group hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-center mb-4 border-b border-slate-100 pb-3">
+                        <span class="bg-indigo-50 text-indigo-700 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Template 1: Modern Left Border Accent</span>
+                        <button onclick="copySignature('sigContainer1')" class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold px-3.5 py-1.5 rounded-lg flex items-center gap-1.5 transition-colors focus:ring-2 focus:ring-indigo-500">
+                            <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy to Clipboard
+                        </button>
+                    </div>
+                    <div class="p-4 bg-white border border-dashed border-slate-200 rounded-xl overflow-x-auto">
+                        <div id="sigContainer1">
+                            <!-- Raw signature table rendered here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TEMPLATE 2 -->
+                <div class="bg-white shadow-sm border border-slate-100 rounded-2xl p-6 relative group hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-center mb-4 border-b border-slate-100 pb-3">
+                        <span class="bg-emerald-50 text-emerald-700 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Template 2: Clean Two-Column Column Splitter</span>
+                        <button onclick="copySignature('sigContainer2')" class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold px-3.5 py-1.5 rounded-lg flex items-center gap-1.5 transition-colors focus:ring-2 focus:ring-indigo-500">
+                            <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy to Clipboard
+                        </button>
+                    </div>
+                    <div class="p-4 bg-white border border-dashed border-slate-200 rounded-xl overflow-x-auto">
+                        <div id="sigContainer2">
+                            <!-- Raw signature table rendered here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TEMPLATE 3 -->
+                <div class="bg-white shadow-sm border border-slate-100 rounded-2xl p-6 relative group hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-center mb-4 border-b border-slate-100 pb-3">
+                        <span class="bg-purple-50 text-purple-700 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Template 3: Minimal Horizontal Line</span>
+                        <button onclick="copySignature('sigContainer3')" class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold px-3.5 py-1.5 rounded-lg flex items-center gap-1.5 transition-colors focus:ring-2 focus:ring-indigo-500">
+                            <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy to Clipboard
+                        </button>
+                    </div>
+                    <div class="p-4 bg-white border border-dashed border-slate-200 rounded-xl overflow-x-auto">
+                        <div id="sigContainer3">
+                            <!-- Raw signature table rendered here -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Dialog Banner -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white px-5 py-3.5 rounded-xl shadow-xl border border-slate-800 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2.5 z-50">
+        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>
+        <div class="text-sm">
+            <p class="font-semibold">Copied Successfully!</p>
+            <p class="text-xs text-slate-400">Now paste it directly into Gmail settings.</p>
+        </div>
+    </div>
+
+    <script>
+        // Preset themes
+        const themes = [
+            { name: "Slate Blue", color: "#1e3a8a" },
+            { name: "Classic Black", color: "#111827" },
+            { name: "Forest Green", color: "#065f46" },
+            { name: "Crimson Red", color: "#991b1b" },
+            { name: "Deep Teal", color: "#0f766e" },
+            { name: "Bronze Brown", color: "#78350f" },
+            { name: "Indigo Velvet", color: "#4338ca" }
+        ];
+
+        let selectedColor = "#1e3a8a"; // Default
+
+        // Init inputs
+        const inputs = ['inputName', 'inputTitle', 'inputPhone', 'inputLocation', 'inputEmail', 'inputSocial'];
+        
+        function renderColorPicker() {
+            const container = document.getElementById('colorContainer');
+            container.innerHTML = '';
+            themes.forEach(theme => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = `w-8 h-8 rounded-full border-2 transition-transform hover:scale-110 relative ${selectedColor === theme.color ? 'border-indigo-600 scale-105' : 'border-transparent'}`;
+                btn.style.backgroundColor = theme.color;
+                btn.title = theme.name;
+                btn.onclick = () => {
+                    selectedColor = theme.color;
+                    renderColorPicker();
+                    updateSignatures();
+                };
+                
+                if (selectedColor === theme.color) {
+                    const check = document.createElement('div');
+                    check.className = 'absolute inset-0 flex items-center justify-center text-white';
+                    check.innerHTML = '<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>';
+                    btn.appendChild(check);
+                }
+                
+                container.appendChild(btn);
+            });
+        }
+
+        function updateSignatures() {
+            const name = document.getElementById('inputName').value;
+            const title = document.getElementById('inputTitle').value;
+            const phone = document.getElementById('inputPhone').value;
+            const loc = document.getElementById('inputLocation').value;
+            const email = document.getElementById('inputEmail').value;
+            const social = document.getElementById('inputSocial').value;
+
+            // Template 1 Generation
+            document.getElementById('sigContainer1').innerHTML = `
+                <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif; line-height: 1.4; color: #111827; max-width: 500px; font-size: 14px; text-align: left;">
+                    <tr>
+                        <!-- Left Accent Bar -->
+                        <td style="width: 4px; background-color: ${selectedColor};" valign="top"></td>
+                        <!-- Spacer Column -->
+                        <td style="width: 16px;"></td>
+                        <!-- Info Panel -->
+                        <td valign="top" style="padding: 2px 0;">
+                            <div style="font-size: 16px; font-weight: bold; color: #111827; margin: 0 0 1px 0; font-family: Arial, Helvetica, sans-serif; text-rendering: optimizeLegibility;">${name}</div>
+                            <div style="font-size: 12px; color: #4b5563; font-weight: 500; text-transform: uppercase; letter-spacing: 0.8px; margin: 0 0 10px 0; font-family: Arial, Helvetica, sans-serif;">${title}</div>
+                            
+                            <table cellpadding="0" cellspacing="0" border="0" style="font-size: 12px; color: #4b5563; font-family: Arial, Helvetica, sans-serif;">
+                                ${phone ? `<tr>
+                                    <td style="color: ${selectedColor}; font-weight: bold; padding-right: 8px; font-family: Arial, sans-serif;">P:</td>
+                                    <td><a href="tel:${phone}" style="color: #4b5563; text-decoration: none;">${phone}</a></td>
+                                </tr>` : ''}
+                                ${email ? `<tr>
+                                    <td style="color: ${selectedColor}; font-weight: bold; padding-right: 8px; font-family: Arial, sans-serif;">E:</td>
+                                    <td><a href="mailto:${email}" style="color: #4b5563; text-decoration: none;">${email}</a></td>
+                                </tr>` : ''}
+                                ${social ? `<tr>
+                                    <td style="color: ${selectedColor}; font-weight: bold; padding-right: 8px; font-family: Arial, sans-serif;">L:</td>
+                                    <td><a href="https://${social}" target="_blank" style="color: #4b5563; text-decoration: none;">${social}</a></td>
+                                </tr>` : ''}
+                                ${loc ? `<tr>
+                                    <td style="color: ${selectedColor}; font-weight: bold; padding-right: 8px; font-family: Arial, sans-serif;">A:</td>
+                                    <td style="color: #4b5563;">${loc}</td>
+                                </tr>` : ''}
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            `;
+
+            // Template 2 Generation
+            // Generates the first initials
+            const initials = name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
+            document.getElementById('sigContainer2').innerHTML = `
+                <table cellpadding="0" cellspacing="0" border="0" style="font-family: Helvetica, Arial, sans-serif; line-height: 1.4; color: #1f2937; text-align: left;">
+                    <tr>
+                        <!-- Initials Badging (Fully Flat pure HTML/CSS structure) -->
+                        <td valign="middle" style="padding-right: 18px;">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td align="center" valign="middle" style="background-color: ${selectedColor}; width: 50px; height: 50px; border-radius: 25px; text-align: center;">
+                                        <span style="color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 18px; font-weight: bold; line-height: 50px; display: block;">${initials}</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <!-- Splitter Border -->
+                        <td valign="middle" style="border-left: 1px solid #d1d5db; height: 54px; padding: 0;"></td>
+                        <!-- Details Panel -->
+                        <td valign="middle" style="padding-left: 18px;">
+                            <div style="font-size: 16px; font-weight: bold; color: #111827; margin: 0 0 1px 0; font-family: Helvetica, Arial, sans-serif;">${name}</div>
+                            <div style="font-size: 11px; color: ${selectedColor}; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 6px 0; font-family: Helvetica, Arial, sans-serif;">${title}</div>
+                            <div style="font-size: 12px; color: #4b5563; font-family: Helvetica, Arial, sans-serif;">
+                                <span style="margin-right: 12px;"><a href="mailto:${email}" style="color: #4b5563; text-decoration: none;">${email}</a></span>
+                                ${phone ? `<span>| &nbsp;<a href="tel:${phone}" style="color: #4b5563; text-decoration: none;">${phone}</a></span>` : ''}
+                                <div style="margin-top: 3px; color: #9ca3af; font-size: 11px;">
+                                    ${loc ? `<span style="margin-right: 12px;">${loc}</span>` : ''}
+                                    ${social ? `<span>• &nbsp;<a href="https://${social}" target="_blank" style="color: #4b5563; text-decoration: none;">LinkedIn</a></span>` : ''}
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            `;
+
+            // Template 3 Generation
+            document.getElementById('sigContainer3').innerHTML = `
+                <table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Trebuchet MS', Arial, sans-serif; line-height: 1.4; color: #1f2937; text-align: left; max-width: 500px;">
+                    <tr>
+                        <td>
+                            <div style="margin-bottom: 4px;">
+                                <strong style="font-size: 17px; color: #111827; font-family: 'Trebuchet MS', Arial, sans-serif;">${name}</strong>
+                                <span style="font-size: 12px; color: #6b7280; font-family: 'Trebuchet MS', Arial, sans-serif; margin-left: 6px; padding-left: 6px; border-left: 1.5px solid #d1d5db;">${title}</span>
+                            </div>
+                            <div style="border-top: 1px solid ${selectedColor}; line-height: 1px; height: 1px; margin: 4px 0 8px 0;"></div>
+                            <div style="font-size: 12px; color: #4b5563; font-family: 'Trebuchet MS', Arial, sans-serif;">
+                                <span style="color: ${selectedColor}; font-weight: bold; margin-right: 4px;">Email:</span><a href="mailto:${email}" style="color: #4b5563; text-decoration: none;">${email}</a>
+                                ${phone ? `<span style="color: #cbd5e1; margin: 0 8px;">|</span><span style="color: ${selectedColor}; font-weight: bold; margin-right: 4px;">Direct:</span><a href="tel:${phone}" style="color: #4b5563; text-decoration: none;">${phone}</a>` : ''}
+                                ${social ? `<span style="color: #cbd5e1; margin: 0 8px;">|</span><a href="https://${social}" target="_blank" style="color: #4b5563; text-decoration: none; font-weight: 500;">Connect on LinkedIn</a>` : ''}
+                                ${loc ? `<div style="margin-top: 4px; color: #9ca3af; font-size: 11px;">${loc}</div>` : ''}
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            `;
+        }
+
+        // Programmatic selection & Copy to clipboard (Rich-Text copy execution)
+        function copySignature(containerId) {
+            const container = document.getElementById(containerId);
+            
+            // To ensure style elements stay intact, we perform a selection and invoke the system's execution command
+            const range = document.createRange();
+            range.selectNode(container);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            
+            try {
+                const isSuccessful = document.execCommand('copy');
+                if (isSuccessful) {
+                    showToast();
+                } else {
+                    fallbackClipboardCopy(container);
+                }
+            } catch (err) {
+                fallbackClipboardCopy(container);
+            }
+            window.getSelection().removeAllRanges();
+        }
+
+        function fallbackClipboardCopy(container) {
+            // Manual selection fallback indicator in case browser restricts programmatic execCommand
+            alert("To copy, please manually highlight the signature layout on the screen, copy it, and paste it directly into your Gmail Signature settings!");
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.className = toast.className.replace('translate-y-20 opacity-0', 'translate-y-0 opacity-100');
+            setTimeout(() => {
+                toast.className = toast.className.replace('translate-y-0 opacity-100', 'translate-y-20 opacity-0');
+            }, 3500);
+        }
+
+        // Attach listeners to input fields
+        inputs.forEach(id => {
+            document.getElementById(id).addEventListener('input', updateSignatures);
+        });
+
+        // Start initialization
+        window.onload = function() {
+            lucide.createIcons();
+            renderColorPicker();
+            updateSignatures();
+        }
+    </script>
+</body>
+</html>
